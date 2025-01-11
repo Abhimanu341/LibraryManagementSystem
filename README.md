@@ -70,38 +70,83 @@ CREATE TABLE issued_status (
 
 ---
 
-2. CRUD Operations
-Create: Inserted sample records into the books table.
-Read: Retrieved and displayed data from various tables.
-Update: Updated records in the employees table.
-Delete: Removed records from the members table as needed.
-Task 1. Create a New Book Record -- "978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.')"
+Here's a comprehensive explanation with your updated tasks for the Library Management System CRUD operations:
 
-INSERT INTO books(isbn, book_title, category, rental_price, status, author, publisher)
+---
+
+## CRUD Operations
+
+### 1. **Create: Inserted Sample Records into the Books Table**
+In this task, you are creating a new book record by inserting data into the `books` table. This is a `CREATE` operation.
+
+#### SQL Query:
+```sql
+INSERT INTO books(isbn, book_title, category, rental_price, status, author, publisher) 
 VALUES('978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.');
 SELECT * FROM books;
-Task 2: Update an Existing Member's Address
+```
+Explanation: 
+- The above query inserts a new book record with ISBN `978-1-60129-456-2`, the title 'To Kill a Mockingbird', category 'Classic', rental price `6.00`, status 'yes' (indicating the book is available), author 'Harper Lee', and publisher 'J.B. Lippincott & Co.' into the `books` table.
+- The `SELECT * FROM books` query displays all the books, including the newly inserted record.
 
-UPDATE members
-SET member_address = '125 Oak St'
+---
+
+### 2. **Update: Update an Existing Member's Address**
+This task focuses on updating an existing record in the `members` table to modify a member's address.
+
+#### SQL Query:
+```sql
+UPDATE members 
+SET member_address = '125 Oak St' 
 WHERE member_id = 'C103';
-Task 3: Delete a Record from the Issued Status Table -- Objective: Delete the record with issued_id = 'IS121' from the issued_status table.
+```
+Explanation:
+- This query updates the address of the member with `member_id = 'C103'` to '125 Oak St' in the `members` table.
 
-DELETE FROM issued_status
-WHERE   issued_id =   'IS121';
-Task 4: Retrieve All Books Issued by a Specific Employee -- Objective: Select all books issued by the employee with emp_id = 'E101'.
+---
 
-SELECT * FROM issued_status
-WHERE issued_emp_id = 'E101'
-Task 5: List Members Who Have Issued More Than One Book -- Objective: Use GROUP BY to find members who have issued more than one book.
+### 3. **Delete: Remove a Record from the Issued Status Table**
+This task involves removing a record from the `issued_status` table. 
 
-SELECT
-    issued_emp_id,
-    COUNT(*)
-FROM issued_status
-GROUP BY 1
-HAVING COUNT(*) > 1
+#### SQL Query:
+```sql
+DELETE FROM issued_status 
+WHERE issued_id = 'IS121';
+```
+Explanation:
+- The query deletes the record with `issued_id = 'IS121'` from the `issued_status` table.
 
+---
+
+### 4. **Retrieve: All Books Issued by a Specific Employee**
+This task retrieves all the books issued by a specific employee, identified by `emp_id`.
+
+#### SQL Query:
+```sql
+SELECT * FROM issued_status 
+WHERE issued_emp_id = 'E101';
+```
+Explanation:
+- This query retrieves all records from the `issued_status` table where the `issued_emp_id` is 'E101', thus showing the books issued by this specific employee.
+
+---
+
+### 5. **List: Members Who Have Issued More Than One Book**
+This task uses the `GROUP BY` clause to find members who have issued more than one book. It involves grouping the data by `issued_emp_id` and counting the number of books issued by each employee.
+
+#### SQL Query:
+```sql
+SELECT issued_emp_id, COUNT(*) 
+FROM issued_status 
+GROUP BY issued_emp_id 
+HAVING COUNT(*) > 1;
+```
+Explanation:
+- This query groups the `issued_status` table by `issued_emp_id`, counts how many books were issued by each employee, and then filters the results to only show employees who have issued more than one book.
+
+---
+
+These operations cover essential CRUD tasks that help manage the library system's data, including inserting, updating, deleting, and retrieving records in a structured manner. You can use similar SQL queries for your own LMS implementation and adjust them as needed.
 ## 3. **SQL Queries**
 
 ### **3.1 Query 1: Retrieve Available Books**
