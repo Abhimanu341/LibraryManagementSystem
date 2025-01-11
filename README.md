@@ -1,7 +1,7 @@
 # SQL Library Management System
 
 This repository demonstrates how to create tables, insert records, and perform various SQL queries to manage a library system. Below is a step-by-step guide for each part of the process.
-
+**Project Title**: Library Management System
 ## 1. **Creating Tables**
 
 ### **1.1 Create Books Table**
@@ -261,4 +261,13 @@ WHERE salary > (
 ## 4. **Conclusion**
 
 The above queries help manage and analyze data within a library system, from tracking available books to understanding rental patterns, member activity, and employee performance. You can modify these queries to fit your specific needs and extend the database for more complex library management features.
+
+
+Author - Sunchu Abhishek
+This project showcases SQL skills essential for database management and analysis. For more content on SQL and data analysis, connect with me through the following channels:
+
+
+
+LinkedIn: Connect with me professionaly https://www.linkedin.com/in/abhi-sunchu/
+Thank you for your interest in this project!
 
