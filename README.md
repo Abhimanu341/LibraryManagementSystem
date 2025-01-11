@@ -70,37 +70,37 @@ CREATE TABLE issued_status (
 
 ---
 
-## 2. **Inserting Records into Tables**
+2. CRUD Operations
+Create: Inserted sample records into the books table.
+Read: Retrieved and displayed data from various tables.
+Update: Updated records in the employees table.
+Delete: Removed records from the members table as needed.
+Task 1. Create a New Book Record -- "978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.')"
 
-### **2.1 Inserting Data into Books Table**
+INSERT INTO books(isbn, book_title, category, rental_price, status, author, publisher)
+VALUES('978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.');
+SELECT * FROM books;
+Task 2: Update an Existing Member's Address
 
-```sql
-INSERT INTO books (book_id, book_title, author_name, category, status)
-VALUES
-(1, 'To Kill a Mockingbird', 'Harper Lee', 'Fiction', 'yes'),
-(2, '1984', 'George Orwell', 'Dystopian', 'no'),
-(3, 'The Great Gatsby', 'F. Scott Fitzgerald', 'Fiction', 'yes');
-```
+UPDATE members
+SET member_address = '125 Oak St'
+WHERE member_id = 'C103';
+Task 3: Delete a Record from the Issued Status Table -- Objective: Delete the record with issued_id = 'IS121' from the issued_status table.
 
-### **2.2 Inserting Data into Members Table**
+DELETE FROM issued_status
+WHERE   issued_id =   'IS121';
+Task 4: Retrieve All Books Issued by a Specific Employee -- Objective: Select all books issued by the employee with emp_id = 'E101'.
 
-```sql
-INSERT INTO members (member_id, member_name, reg_date)
-VALUES
-('M101', 'Alice Smith', '2023-05-15'),
-('M102', 'John Doe', '2024-01-10');
-```
+SELECT * FROM issued_status
+WHERE issued_emp_id = 'E101'
+Task 5: List Members Who Have Issued More Than One Book -- Objective: Use GROUP BY to find members who have issued more than one book.
 
-### **2.3 Inserting Data into Issued Status Table**
-
-```sql
-INSERT INTO issued_status (issue_id, issued_member_id, issued_book_name, issued_date, return_date, issued_emp_id)
-VALUES
-(1, 'M101', 'To Kill a Mockingbird', '2024-01-05', '2024-01-15', 'E101'),
-(2, 'M102', '1984', '2024-01-07', '2024-01-14', 'E102');
-```
-
----
+SELECT
+    issued_emp_id,
+    COUNT(*)
+FROM issued_status
+GROUP BY 1
+HAVING COUNT(*) > 1
 
 ## 3. **SQL Queries**
 
