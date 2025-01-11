@@ -1,6 +1,10 @@
 # SQL Library Management System
 
 This repository demonstrates how to create tables, insert records, and perform various SQL queries to manage a library system. Below is a step-by-step guide for each part of the process.
+
+![pic_LMS](https://github.com/user-attachments/assets/e79efcd0-b9da-4110-b8dc-cf7875cc5db7)
+
+
 **Project Title**: Library Management System
 ## 1. **Creating Tables**
 
