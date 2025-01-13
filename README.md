@@ -313,9 +313,11 @@ The above queries help manage and analyze data within a library system, from tra
 
 
 Author - Sunchu Abhishek
+
+
 This project showcases SQL skills essential for database management and analysis. For more content on SQL and data analysis, connect with me through the following channels:
 
-
+THANK YOU FOR THE DATASET RESOURCES---https://www.youtube.com/watch?v=6X2-P9fNVvw&list=LL&index=6
 
 LinkedIn: Connect with me professionaly https://www.linkedin.com/in/abhi-sunchu/
 Thank you for your interest in this project!
